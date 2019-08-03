@@ -358,31 +358,31 @@ if (typeof jQuery === 'undefined') {
     return this
   }
 
-  Carousel.prototype.getItemIndex = function (item) {
+  Carousel.prototype.getItemindex = function (item) {
     this.$items = item.parent().children('.item')
     return this.$items.index(item || this.$active)
   }
 
   Carousel.prototype.getItemForDirection = function (direction, active) {
-    var activeIndex = this.getItemIndex(active)
-    var willWrap = (direction == 'prev' && activeIndex === 0)
-                || (direction == 'next' && activeIndex == (this.$items.length - 1))
+    var activeindex = this.getItemindex(active)
+    var willWrap = (direction == 'prev' && activeindex === 0)
+                || (direction == 'next' && activeindex == (this.$items.length - 1))
     if (willWrap && !this.options.wrap) return active
     var delta = direction == 'prev' ? -1 : 1
-    var itemIndex = (activeIndex + delta) % this.$items.length
-    return this.$items.eq(itemIndex)
+    var itemindex = (activeindex + delta) % this.$items.length
+    return this.$items.eq(itemindex)
   }
 
   Carousel.prototype.to = function (pos) {
     var that        = this
-    var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
+    var activeindex = this.getItemindex(this.$active = this.$element.find('.item.active'))
 
     if (pos > (this.$items.length - 1) || pos < 0) return
 
     if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
-    if (activeIndex == pos) return this.pause().cycle()
+    if (activeindex == pos) return this.pause().cycle()
 
-    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
+    return this.slide(pos > activeindex ? 'next' : 'prev', this.$items.eq(pos))
   }
 
   Carousel.prototype.pause = function (e) {
@@ -431,7 +431,7 @@ if (typeof jQuery === 'undefined') {
 
     if (this.$indicators.length) {
       this.$indicators.find('.active').removeClass('active')
-      var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
+      var $nextIndicator = $(this.$indicators.children()[this.getItemindex($next)])
       $nextIndicator && $nextIndicator.addClass('active')
     }
 
@@ -505,13 +505,13 @@ if (typeof jQuery === 'undefined') {
     var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
     if (!$target.hasClass('carousel')) return
     var options = $.extend({}, $target.data(), $this.data())
-    var slideIndex = $this.attr('data-slide-to')
-    if (slideIndex) options.interval = false
+    var slideindex = $this.attr('data-slide-to')
+    if (slideindex) options.interval = false
 
     Plugin.call($target, options)
 
-    if (slideIndex) {
-      $target.data('bs.carousel').to(slideIndex)
+    if (slideindex) {
+      $target.data('bs.carousel').to(slideindex)
     }
 
     e.preventDefault()

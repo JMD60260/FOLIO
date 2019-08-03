@@ -12,19 +12,19 @@
 //===================
 jQuery(document).ready(function() {
 
-    /* HOME SLIDERS */
-    $("#home.business-slider").backstretch(
+    /* index SLIDERS */
+    $("#index.business-slider").backstretch(
       [ "assets/images/business/business-slide-1.jpg", 
         "assets/images/business/business-slide-2.jpg" ], 
       {duration: 6000, fade: 1200
     });  
 
-    $("#home.fashion-slider").backstretch(["assets/images/fashion/fashion-slide-1.jpg", "assets/images/fashion/fashion-slide-2.jpg"], {
+    $("#index.fashion-slider").backstretch(["assets/images/fashion/fashion-slide-1.jpg", "assets/images/fashion/fashion-slide-2.jpg"], {
       duration: 6000,
       fade: 1200
     });  
 
-    $("#home.backstretched").backstretch(["assets/images/hero-bg.jpg", "assets/images/blog-1.jpeg", "assets/images/blog-4.jpeg", ], {
+    $("#index.backstretched").backstretch(["assets/images/hero-bg.jpg", "assets/images/blog-1.jpeg", "assets/images/blog-4.jpeg", ], {
       duration: 6000,
       fade: 1200
     });
@@ -121,11 +121,11 @@ jQuery(document).ready(function() {
   /* BACKSTRETCH LINKS */
   $("a[href*=#prev-slide]").on("click",function(event) {
       event.preventDefault(); 
-      jQuery('#home.backstretched').data('backstretch').prev();
+      jQuery('#index.backstretched').data('backstretch').prev();
     });
   $("a[href*=#next-slide]").on("click",function(event) {
       event.preventDefault(); 
-      jQuery('#home.backstretched').data('backstretch').prev();
+      jQuery('#index.backstretched').data('backstretch').prev();
   });
 
   /* BOOTSTRAP DROPDOWN ENCANCHMENT */
@@ -228,9 +228,9 @@ jQuery(document).ready(function() {
   $('#show-gallery').on('click', function(event){
     event.preventDefault();
     $(this).toggleText('View Gallery', 'Close');
-    $('#home').toggleClass('show-gallery');
+    $('#index').toggleClass('show-gallery');
     $('.section-title, .item-metas').fadeToggle();
-    $('#home').backstretch("resize");
+    $('#index').backstretch("resize");
     $('.vertical-center-js').flexVerticalCenter({
       cssAttribute: 'padding-top'
     });
@@ -239,7 +239,7 @@ jQuery(document).ready(function() {
   $('#show-video').on('click', function(event){
     event.preventDefault();  
     $(this).toggleText('View Video', 'Close');
-    $('#home').toggleClass('show-gallery');
+    $('#index').toggleClass('show-gallery');
     $('.section-title, .item-metas').fadeToggle();
     $('.vertical-center-js').flexVerticalCenter({
       cssAttribute: 'padding-top'

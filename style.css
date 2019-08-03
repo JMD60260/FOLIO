@@ -339,13 +339,13 @@ i.x4:before {
 /* HEADER
 /*-----------------------------------------------------------------------------------*/
 
-#home {
+#index {
     background-image: url(assets/images/hero-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#home.home-portfolio {
+#index.index-portfolio {
     background-image: url(assets/images/portfolio/hero-bg.jpg);
 }
 
@@ -355,8 +355,8 @@ i.x4:before {
     background-size: cover;
 }
 
-#home.fullheight.max-600,
-#home .fullheight.max-600 {
+#index.fullheight.max-600,
+#index .fullheight.max-600 {
     max-height: 600px;
 }
 
@@ -838,7 +838,7 @@ textarea.form-control {
 /*-----------------------------------------------------------------------------------*/
 
 section,
-header#home {
+header#index {
     border-bottom: 0px solid #222;
     overflow: hidden;
 }
